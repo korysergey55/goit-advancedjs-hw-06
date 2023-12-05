@@ -2,7 +2,13 @@
   Використовуйте generics та інтерфейси, щоб виправити помилку в наступних класах:
 */
 
-class Component {
+interface ComponentInt {
+  props: {
+    title:string
+  }
+}
+
+class Component  implements <T extends ComponentInt> {
   constructor (public props:T) {
 
   }
