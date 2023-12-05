@@ -3,18 +3,16 @@
 */
 
 interface ComponentInt {
-  props: {
-    title:string
-  }
+  title:string
 }
 
-class Component  implements <T extends ComponentInt> {
+class Component  <T extends ComponentInt> {
   constructor (public props:T) {
 
   }
 }
 
-class Page extends Component {
+class Page extends Component <ComponentInt> {
   pageInfo () {
     console.log(this.props.title);
   }

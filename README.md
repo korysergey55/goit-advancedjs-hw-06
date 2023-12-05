@@ -1,12 +1,12 @@
-# Базові типи
+# Basic types
 
-Метою цього домашнього завдання є закріплення ваших навичок роботи з базовими типами TypeScript. Ви будете працювати з типами, такими як number, string, boolean, null, undefined, unknown, any, а також кортежами, переліками (enum) та об'єднаннями типів.
+The goal of this homework is to solidify your skills in working with basic TypeScript types. You will work with types such as number, string, boolean, null, undefined, unknown, any, as well as tuples, enums, and unions of types.
 
-В кінці домашнього завдання ви також попрактикуєтеся у створенні свого типу на основі наявних об'єктів. Це допоможе вам краще зрозуміти, як TypeScript може бути використаний для забезпечення типової безпеки ваших даних та підвищення якості вашого коду.
+At the end of the homework, you will also practice creating your own type based on existing objects. This will help you better understand how TypeScript can be used to ensure the typical security of your data and improve the quality of your code.
 
 
 ### Завдання 1
-Є наступний JavaScript код:
+There is the following JavaScript code:
 
 ```ts
 let age = 50;
@@ -17,39 +17,39 @@ let notInitialize;
 let callback = (a) => { return 100 + a };
 ```
 
-Перетворіть цей код на TypeScript, вказавши відповідні типи для всіх змінних.
+Convert this code to TypeScript by specifying the appropriate types for all variables.
 
 ### Завдання 2
-JavaScript змінна може зберігати значення будь-якого типу:
+A JavaScript variable can hold any type of value:
 ```ts
 let anything = -20;
 anything = 'Text';
 anything = {};
 ```
-Який тип ви надаєте змінній anything в TypeScript, щоб зберегти її гнучкість?
+What type do you assign to an anything variable in TypeScript to keep it flexible?
 
 ### Завдання 3
-У TypeScript тип unknown дозволяє нам зберігати будь-які значення, але ми можемо привласнити unknown змінну безпосередньо інший змінної, якщо ми впевнені у її типі. У вас є наступний код:
+In TypeScript, the unknown type allows us to store any values, but we can assign an unknown variable directly to another variable if we are sure of its type. You have the following code:
 ```ts
 let some:unknown;
 some = 'Text';
 let str: string;
 str = some;
 ```
-Що потрібно виправити в цьому коді, щоб він став правильним та безпечним?
+What needs to be fixed in this code to make it correct and safe?
 
 ### Завдання 4
-У вас є наступний JavaScript масив:
+You have the following JavaScript array:
 ```ts
 let person = ['Max', 21];
 ```
-Як переписати його в TypeScript, використовуючи концепцію кортежів, щоб гарантувати, що перший елемент завжди буде рядком, а другий числом?
+How do  rewrite it in TypeScript using the concept of tuples to ensure that the first element is always a string and the second a number?
 
 ### Завдання 5
-Як ви визначите змінну в TypeScript, яка може приймати рядок або число (union type)? І так само визначте змінну, яка може приймати тільки одне з двох рядкових значень: 'enable' або 'disable' (literal type)?
+How do you define a variable in TypeScript that can accept a string or a number (union type)? And in the same way, define a variable that can take only one of two string values: 'enable' or 'disable' (literal type)?
 
 ### Завдання 6
-У вас є такі функції JavaScript:
+You have the following JavaScript functions:
 ```ts
 function showMessage(message) {
   console.log(message);
@@ -63,16 +63,15 @@ function customError() {
   throw new Error('Error');
 }
 ```
-Як ви вкажете типи для аргументів і значень цих функцій, що повертаються?
+How do you specify the types for the arguments and return values ​​of these functions?
 
 ### Завдання 7
-Створіть функцію (isWeekend), яка приймає день тижня (з вашого enum) і повертає boolean значення, що вказує, чи це день робочий чи вихідний.
+Create a function (isWeekend) that takes the day of the week (from your enum) and returns a boolean value indicating whether it is a weekday or a weekend.
 
 ### Завдання 8
-Створіть тип "Gender", використовуючи union type, який може містити значення "male", "female". Створіть змінну myGender цього типу.
-
+Create a "Gender" type using a union type that can contain the values ​​"male", "female". Create a myGender variable of this type.
 ### Завдання 9
-У вас є два об'єкти:
+You have two objects:
 ```ts
 const page1 = {
   title: 'The awesome page',
@@ -92,13 +91,13 @@ const page2 = {
   status: 'close',
 }
 ```
-Створіть новий тип даних, який підходить для цих двох об'єктів.
+Create a new data type that fits these two objects.
 
 # Generic
-Мета цього завдання - допомогти вам зрозуміти та застосувати generics у TypeScript. Ви працюватимете з функціями, що повертають проміси, використовувати вбудований тип Pick, об'єднувати об'єкти за допомогою generics, а також вирішувати проблеми типів у класах.
+The purpose of this task is to help you understand and apply generics in TypeScript. You will work with functions that return promises, use the built-in Pick type, combine objects using generics, and solve type problems in classes.
 
 ### Завдання 1
-Є функція getPromise(), яка повертає проміс, що дозволяється в масив, що містить рядки та числа. Доповніть цю функцію, використовуючи generics, щоб вона повертала правильний тип.
+There is a getPromise() function that returns the promise allowed in an array containing strings and numbers. Complement this function using generics so that it returns the correct type.
 ```ts
 function getPromise () {
   return new Promise((resolve) => {
@@ -112,7 +111,7 @@ getPromise()
 });
 ```
 ### Завдання 2
-У вас є тип AllType. Існує функція compare, яка приймає два об'єкти. Ці об'єкти містять поля AllType. Ваше завдання – використовувати Pick та generics для вказівки, що поля цих об'єктів належать AllType. Функція compare повинна повертати AllType.
+You have an AllType type. There is a compare function that accepts two objects. These objects contain AllType fields. Your task is to use Pick and generics to indicate that the fields of these objects belong to AllType. The compare function should return AllType.
 ```ts
 type AllType = {
   name: string;
@@ -131,14 +130,14 @@ function compare (top, bottom): AllType {
 }
 ```
 ### Завдання 3
-У вас є функція merge, яка поєднує два об'єкти. Використовуйте generics, щоб вказати, що ці об'єкти можуть бути будь-якого типу.
+You have a merge function that combines two objects. Use generics to indicate that these objects can be of any type.
 ```ts
 function merge (objA, objB) {
   return Object.assign(objA, objB);
 }
 ```
 ### Завдання 4
-Використовуйте generics та інтерфейси, щоб виправити помилку в наступних класах:
+Use generics and interfaces to fix the error in the following classes:
 ```ts
 class Component {
   constructor (public props:T) {
@@ -153,7 +152,7 @@ class Page extends Component {
 }
 ```
 ### Завдання 5
-Вам потрібно реалізувати інтерфейс KeyValuePair, який описує пару ключ-значення. Використовуйте generics, щоб цей інтерфейс міг працювати з будь-якими типами ключів та значень.
+You need to implement the KeyValuePair interface, which describes a key-value pair. Use generics so that this interface can work with all key and value types.
 ```ts
 interface KeyValuePair {
   key;
@@ -161,9 +160,9 @@ interface KeyValuePair {
 }
 ```
 ### Завдання 6
-Ви маєте форму реєстрації користувачів. Іноді потрібно попередньо заповнити форму даними користувача для оновлення його профілю. Однак вам не завжди потрібно заповнити всі поля. Наприклад, користувач може хотіти оновити лише свій email та пароль, залишивши ім'я та прізвище без змін.
+You have a user registration form. Sometimes you need to pre-fill the form with the user's data to update his profile. However, you don't always need to fill in all the fields. For example, the user may want to update only his email and password, leaving the first and last name unchanged.
 
-Виправте тип у аргументі функції так, щоб не було помилок типу.
+Correct the type in the function argument so that there are no type errors.
 ```ts
 type User = {
   name: string;
@@ -179,7 +178,7 @@ function createOrUpdateUser(initialValues: User) {
 createOrUpdateUser({ email: 'user@mail.com', password: 'password123' });
 ```
 ### Завдання 7
-У вас є перелік UserRole, який використовується для класифікації користувачів у вашому додатку. Ви хочете створити об'єкт RoleDescription, який зіставлятиме кожну роль користувача з її описом.
+You have a UserRole enumeration that is used to classify users in your application. You want to create a RoleDescription object that maps each user role to its description.
 ```ts
 export enum UserRole {
   admin = 'admin',
@@ -195,7 +194,7 @@ const RoleDescription = {
 };
 ```
 ### Завдання 8
-У вас є тип Form, який містить інформацію про форму, включаючи поле errors. Ви хочете створити новий тип Params, який включає всі поля з Form, крім errors.
+You have a Form type that contains information about the form, including an errors field. You want to create a new Params type that includes all fields from the Form except errors.
 ```ts
 type Errors = {
   email?: string[];
@@ -212,6 +211,6 @@ type Form = {
   errors: Errors;
 };
 
-// Реалізуйте Params так, щоб унеможливити поле 'errors' з типу Form
+// Implement Params to disable the 'errors' field from the Form type
 type Params = Form;
 ``
